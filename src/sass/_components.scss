@@ -1,0 +1,129 @@
+///////////////////////////////////
+///////Logo
+
+.logo {
+    height: 3.25rem;
+
+}
+
+
+
+///////////////////////////////////
+///////Search
+
+.search {
+    position: relative;
+    flex: 0 0 40%;
+
+    &__input {
+        display: inline-block;
+        font-family: inherit;
+        font-size: inherit;
+        border: none;
+        background-color: var(--color-grey-light-2);
+        color: var(--color-grey-dark-1);
+        border-radius: 100px;
+        padding: 1rem 2rem;
+        width: 90%;
+        transition: all .2s;
+
+        &:focus {
+            outline: none;
+            width: 100%;
+            background-color: var(--color-grey-light-3);
+        }
+
+        &::placeholder {
+            color: var(--color-grey-light-4);
+            font-weight: 100;
+        }
+
+        &:focus + .search__btn {
+            right: 5%;
+        }
+    }
+
+    &__btn {
+        border: none;
+        background-color: transparent;
+        position: absolute;
+        right: 15%;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: all .2s;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &__icon {
+        height: 2rem;
+        width: 2rem;
+        fill: var(--color-grey-dark-3)
+    }
+}
+
+
+///////////////////////////////////
+///////User Navigation
+
+
+.user-nav {
+
+    display: flex;
+    align-self: stretch;
+    gap: 1.6rem;
+
+    & > * {
+        padding: 0 2rem;
+        cursor: pointer;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    & > *:hover {
+        background-color: var(--color-grey-light-3);
+    }
+
+    &__icon-box {
+        position: relative;
+
+    }
+
+    &__icon {
+        height: 2.5rem;
+        width: 2.5rem;
+        fill: var(--color-grey-dark-2);
+    }
+
+    &__notification {
+        position: absolute;
+        right: 22%;
+        top: 22%;
+        color: #fff;
+        font-size: 8px;
+        font-weight: 100;
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 50%;
+        background-color: var(--color-primary);
+        z-index: 100;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    &__img {
+        width: 3.5rem;
+        height: 3.5rem;
+        border-radius: 50%;
+    }
+
+    &__user-name {
+        margin-left: 1rem;
+
+    }
+}
