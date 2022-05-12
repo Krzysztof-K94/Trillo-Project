@@ -127,3 +127,68 @@
 
     }
 }
+
+
+///////////////////////////////////
+///////Sidebar Navigation
+
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3.5rem;
+    list-style: none;
+    gap: 0.5rem;
+
+    &__item {
+        position: relative;
+
+        &::before {
+            content: '';
+            background-color: var(--color-primary);
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 3px;
+            transition: transform .2s, width .4s cubic-bezier(.98,-0.01,0,.99) .2s;
+            transform: scale(0);
+        }
+
+        &:hover::before {
+            transform: scale(1);
+            width: 100%;
+        }
+
+        &--active {
+            background-color: var(--color-primary);
+        }
+    }
+
+
+
+    &__link:link,
+    &__link:visited {
+        position: relative;
+        display: flex;
+        align-items: center;
+        color: var(--color-grey-light-1);
+        font-size: 1.4rem;
+        padding: 1.5rem 3rem;
+        text-decoration: none;
+        text-transform: uppercase;
+        z-index: 10;
+    }
+
+    &__link:active {
+        background-color: var(--color-primary-light);
+    }
+
+    &__icon {
+        width: 2rem;
+        height: 2rem;
+        fill: currentColor; 
+        margin: 0 1.5rem;
+    }
+}
