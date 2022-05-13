@@ -458,3 +458,67 @@
     }
 
 }
+
+///////////////////////////////////
+//////Call to action
+
+.cta {
+    padding: 3.5rem 0;
+    text-align: center;
+    background-color: #fff;
+    
+
+    &__heading {
+        font-size: 1.8rem;
+        text-transform: uppercase;
+        font-weight: 300;
+        margin-bottom: 2.5rem;
+    }
+}
+
+.btn {
+    position: relative;
+    font-size: 1.5rem;
+    border: none;
+    font-weight: 300;
+    text-transform: uppercase;
+    border-radius: 100px;
+    background-image: linear-gradient(to right, var(--color-primary-light), var(--color-primary-dark));
+    color: #fff;
+    overflow: hidden;
+    cursor: pointer;
+    
+    & > * {
+        height: 100%;
+        width :100%;
+        display: inline-block;
+        transition: all .2s;
+    }
+
+    &__visible {
+        padding: 2rem 7.5rem;
+    }
+
+    &__invisible {
+        position: absolute;
+        left: 0;
+        top: -100%;
+        padding: 2rem 0;
+    }
+
+    &:hover &__invisible {
+        top: 0;
+    }
+
+    &:hover &__visible {
+        transform: translateY(100%);
+    }
+
+    &:hover {
+        background-image: linear-gradient(to left, var(--color-primary-light), var(--color-primary-dark));
+    }
+
+    &:focus {
+        animation: pulsate 1s infinite;
+    }
+}

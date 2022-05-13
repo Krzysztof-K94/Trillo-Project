@@ -37,7 +37,6 @@
 
 .detail {
     display: flex;
-    gap: 4.5rem;
     padding: 4.5rem;
     background-color: var(--color-grey-light-1);
     border-bottom: var(--line);
@@ -49,6 +48,7 @@
     box-shadow: 0 2rem 5rem rgba( #000000, .1);
     flex: 0 0 60%;
     padding: 3rem;
+    margin-right: 4.5rem;
 }
 
 .user-reviews {
