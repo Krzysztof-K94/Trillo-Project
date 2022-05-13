@@ -29,6 +29,9 @@ Grey dark 3: #999
 
     //rgba doesn't work
     --shadow-dark: 0 2rem 6rem #00000030;
+    --shadow-light: 0 2rem 5rem #00000010;
+
+    --line : 1px solid var(--color-grey-light-2);
 
 }
 
