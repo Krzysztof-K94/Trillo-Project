@@ -37,22 +37,28 @@ let suggestion = [
        let emptyArr = [];
 
        if(userData) {
-           emptyArr = suggestion.filter( data => {
-               return data.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase());
-           });
+           emptyArr = suggestion.filter( data => data.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase()));
 
-           emptyArr = emptyArr.map( data => {
-                return data = `<li class="autocom-box__item">${data}</li>`;
-            });
+            emptyArr = emptyArr.map( data => data =`<li class="autocom-box__item">${data}</li>`);
 
             suggBox.classList.add('active');
+
+            showSuggestions(emptyArr);
+
+            let allList = document.querySelectorAll('.autocom-box__item');
+
+            allList.forEach(item => item.setAttribute('onclick', 'select(this)'));
        }
-       else {
+        else {
            suggBox.classList.remove('active');
        }
-       
-       console.log(e.target.value)
-       showSuggestions(emptyArr);
+    }
+
+    function select(element) {
+        let selectUserData = element.textContent;
+        input.value = selectUserData;
+        suggBox.classList.remove('active');
+        input.focus();
     }
 
 
@@ -60,13 +66,13 @@ let suggestion = [
         let listData;
         let userValue;
 
+        // if nothing matches show list item with input value
         if(!list.length) {
             userValue = input.value;
-            listData = `<li class="autocom-box__item">${userValue}</li>`;
+            listData = `<li class="autocom-box__item wrong">${userValue}</li>`;
         }
         else {
-            listData = list.join("");
-            console.log(listData)
+            listData = list.join(""); 
         }
 
         suggBox.innerHTML = listData;
