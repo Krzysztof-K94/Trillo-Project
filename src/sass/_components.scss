@@ -131,11 +131,54 @@
         border-radius: 50%;
     }
 
+    &__user {
+        position: relative;
+
+        &:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
     &__user-name {
         margin-left: 1rem;
-
     }
 }
+
+///////////////////////////////////
+///////Dropdown Menu
+
+.dropdown-menu {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    list-style: none;
+    width: 20rem;
+    top: 100%;
+    right: 2rem;
+    background-color: #fff;
+    z-index: 1000;
+    box-shadow: var(--shadow-light);
+    transition: all .2s;
+
+    &__item {
+        border-top: var(--line);
+
+        &:hover {
+            background-color: var(--color-grey-light-3);
+        }
+    }
+
+
+    &__link {
+        display: block;
+        text-decoration: none;
+        padding: 1rem 2rem;
+        color: var(--color-grey-dark-2);
+    }
+
+}
+
 
 
 ///////////////////////////////////
@@ -233,10 +276,36 @@
 .gallery {
     display: flex;
 
+    &__item {
+        position: relative;
+
+        &:hover .gallery__photo {
+            filter: blur(1px) brightness(50%);
+        }
+
+        &:hover .gallery__caption {
+            opacity: 1;
+        }
+    }
+
     &__photo {
         width :100%;
         height: 100%;
         object-fit: cover;
+        backface-visibility: none;
+    }
+
+    &__caption {
+        position: absolute;
+        top: 50%;
+        text-align: center;
+        transform: translateY(-50%);
+        font-size: 1.8rem;
+        color: white;
+        opacity: 0;
+        width: 100%;
+        text-transform: uppercase;
+        transition: all .2s;
     }
 }
 
