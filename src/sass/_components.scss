@@ -73,6 +73,36 @@
     }
 }
 
+    .autocom-box {
+        position: absolute;
+        padding-top: 1rem;
+        z-index: 100;
+        background-color: #fff;
+        width: 100%;
+        opacity: 0;
+        visibility: hidden;
+        box-shadow: var(--shadow-dark);
+
+        &__item {
+            list-style: none;
+            padding: 1rem 1rem;
+            width: 100%;
+            cursor: pointer;
+    
+            &:hover {
+                background-color: var(--color-grey-light-3);
+            }
+
+            &.wrong {
+                cursor: auto;
+            }
+        }
+
+        &.active {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
 
 ///////////////////////////////////
 ///////User Navigation
@@ -99,6 +129,9 @@
     &__icon-box {
         position: relative;
 
+        &:hover .user-nav__speech-bubble {
+            opacity: 1;   
+        }
     }
 
     &__icon {
@@ -140,6 +173,20 @@
         }
     }
 
+    &__speech-bubble {
+        position: absolute;
+        opacity: 0;
+        padding: .5rem 1rem;
+        font-size: 1.1rem;
+        bottom: -2rem;
+        left: -2rem;
+        color: #fff;
+        background-color: rgba(#333, .9);
+        border-radius: 9px;
+        z-index: 100;
+        transition: opacity .2s;
+    }
+
     &__user-name {
         margin-left: 1rem;
     }
@@ -170,7 +217,8 @@
     }
 
 
-    &__link {
+    &__link:link,
+    &__link:visited {
         display: block;
         text-decoration: none;
         padding: 1rem 2rem;
